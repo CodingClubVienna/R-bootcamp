@@ -9,6 +9,8 @@ library(palmerpenguins)
 
 # to look up what a command does you can 
 help()
+# cheat sheet
+# https://www.datacamp.com/cheat-sheet/tidyverse-cheat-sheet-for-beginners
 
 # many commands in the tidyverse use %>% which is called the operator 
 # the functions we use after this will be applied to the data frame to the left of the operator
