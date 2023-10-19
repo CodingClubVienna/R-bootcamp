@@ -20,25 +20,32 @@ penguins_raw %>% head()
 penguins_raw <- palmerpenguins::penguins_raw
 penguins <- palmerpenguins::penguins
 
-# what is the differences between the penguins and penguins raw datasets? 
+# what is the differences between the penguins and penguins raw datasets?
+# penguins has more variables
 penguins %>% head()
-view()
-glimpse()
+penguins_raw %>% head()
+view(penguins)
+view(penguins_raw)
+glimpse(penguins)
+glimpse(penguins_raw)
 
 ### Step 2 - basic statistics data cleaning  
 # give 5 pieces of information about the penguins from the raw dataset? 
 # for example - total, mean, median etc
+# mean flipper length: 200,92 mm
+# 3 different species
+# median body mass: 4050
 # if there are any na values they have to be ignored when calculating using na.rm
 mean(penguins_raw$`Flipper Length (mm)`, na.rm = TRUE)
 penguins_raw %>% count(Species)
-summary(penguins_raw)
+summary(penguins_raw , na.rm = TRUE)
 
 # remove the stage column and save the output 
-select() # for selecting columns
+penguins_raw %>% select(-Stage) # for selecting columns
 # change one or two column names to be lower case
-rename()
+penguins_raw %>% rename(region = Region)
 # change body mass values from g to kg 
-mutate()
+penguins_raw %>% mutate()
 # change the column title for body mass values
 rename()
 # change measurements from mm to cm
